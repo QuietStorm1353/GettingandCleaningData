@@ -1,0 +1,89 @@
+This project is based on activity data from the following dataset, which contains test and train files, as well as activity and subjeect labels:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+Detailed information regarding the expiriment parmeters and coonsiderations can be found here:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+run_analysis.r is a commented R script that steps through the process of simplifying, cleaning, and combining test and training data to arrive at a summarized column for each subject, by activity and mean. 
+
+Test and training datasets are downloaded, saved, and read to R before being merged into one data frame.
+The data columns are then given names based on the features.txt file.
+Columns with mean or standard deviation measurements are selected, while all the other measurement columns are excluded from running_data.
+The activity column is given activity labels based on the activity_labels.txt file.
+
+The data is then grouped by subject and activity, and summarized by the mean for each measurement column, resulting in one row for each combination of subject identifier, activity label, and mean.
+The summary data is written to a text file, run_data_summary.txt.
+Each line in run_analysis.R is commented. Reference the file for more information on this process.
+
+Columns in output file
+The columns included in the output file are listed below:
+
+subject_id - The id of the experiment participant.
+activity_labels - The name of the activity that the measurements correspond to
+
+tBodyAcc-mean()-X	
+tBodyAcc-mean()-Y	
+tBodyAcc-mean()-Z	
+tGravityAcc-mean()-X	
+tGravityAcc-mean()-Y	
+tGravityAcc-mean()-Z	
+tBodyAccJerk-mean()-X	
+tBodyAccJerk-mean()-Y	
+tBodyAccJerk-mean()-Z	
+tBodyGyro-mean()-X	
+tBodyGyro-mean()-Y	
+tBodyGyro-mean()-Z	
+tBodyGyroJerk-mean()-X	
+tBodyGyroJerk-mean()-Y	
+tBodyGyroJerk-mean()-Z	
+tBodyAccMag-mean()	
+tGravityAccMag-mean()	
+tBodyAccJerkMag-mean()	
+tBodyGyroMag-mean()	
+tBodyGyroJerkMag-mean()	
+fBodyAcc-mean()-X	
+fBodyAcc-mean()-Y	
+fBodyAcc-mean()-Z	
+fBodyAccJerk-mean()-X	
+fBodyAccJerk-mean()-Y	
+fBodyAccJerk-mean()-Z	
+fBodyGyro-mean()-X	
+fBodyGyro-mean()-Y	
+fBodyGyro-mean()-Z	
+fBodyAccMag-mean()	
+fBodyBodyAccJerkMag-mean()	
+fBodyBodyGyroMag-mean()	
+fBodyBodyGyroJerkMag-mean()	
+tBodyAcc-std()-X	
+tBodyAcc-std()-Y	
+tBodyAcc-std()-Z	
+tGravityAcc-std()-X	
+tGravityAcc-std()-Y	
+tGravityAcc-std()-Z	
+tBodyAccJerk-std()-X	
+tBodyAccJerk-std()-Y	
+tBodyAccJerk-std()-Z	
+tBodyGyro-std()-X	
+tBodyGyro-std()-Y	
+tBodyGyro-std()-Z	
+tBodyGyroJerk-std()-X	
+tBodyGyroJerk-std()-Y	
+tBodyGyroJerk-std()-Z	
+tBodyAccMag-std()	
+tGravityAccMag-std()	
+tBodyAccJerkMag-std()	
+tBodyGyroMag-std()	
+tBodyGyroJerkMag-std()	
+fBodyAcc-std()-X	
+fBodyAcc-std()-Y	
+fBodyAcc-std()-Z	
+fBodyAccJerk-std()-X	
+fBodyAccJerk-std()-Y	
+fBodyAccJerk-std()-Z	
+fBodyGyro-std()-X	
+fBodyGyro-std()-Y	
+fBodyGyro-std()-Z	
+fBodyAccMag-std()	
+fBodyBodyAccJerkMag-std()	
+fBodyBodyGyroMag-std()	
+fBodyBodyGyroJerkMag-std()
